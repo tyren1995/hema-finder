@@ -1,31 +1,32 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
+import HemaMapLogic from "../logic/hemaMapLogic";
+import Pin from '../../../misc/location-pin.png' ;
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default function SimpleMap(){
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627
-    },
-    zoom: 11
-  };
+    const {userLat,userLong} = HemaMapLogic();
 
   return (
     // Important! Always set the container height explicitly
+    userLat && userLong ? (
     <div style={{ height: '100vh', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "AIzaSyD6Hak_dqyUSpKnqqQ-6OaKnNI-qSQasp8" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
+        defaultCenter={{lat: userLat,
+            lng: userLong}}
+        defaultZoom={11}
       >
-        <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
+        <img
+        height={30}
+          lat={userLat}
+          lng={userLong}
+          src={Pin}
         />
       </GoogleMapReact>
     </div>
+    )
+    :
+    ('LOADING')
   );
 }
