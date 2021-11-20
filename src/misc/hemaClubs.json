@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Black Bear Historical Fencing",
+        "lat": "39.616270",
+        "lng": "-79.931580",
+        "url": "https://www.google.com/maps/dir/?api=1&destination=39.616270,-79.931580"
+    },
+    {
+        "name": "Steel City Historical Fencing",
+        "lat": "40.484000",
+        "lng": "-79.948630",
+        "url": "replace"
+    },
+]
