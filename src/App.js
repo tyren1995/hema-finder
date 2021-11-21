@@ -1,9 +1,9 @@
-import SimpleMap from './components/map/ui/hemaMap';
+import HemaMap from './components/map/ui/hemaMap';
 
 function App() {
   return (
     <div className="App">
-      <SimpleMap />
+      <HemaMap />
     </div>
   );
 }
